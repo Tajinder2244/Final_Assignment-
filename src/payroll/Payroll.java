@@ -1,9 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package payroll;
+
 
 /** This code calculates the salary including bonus.
  * bonus is 10% of salary and applied to the employees whose salary is <=3000
@@ -16,33 +12,54 @@ public class Payroll
    private double bonus;
    private String emp;
  
-     /**constructor that takes the salary and employee name
-      * 
-      */
+     //constructor that takes the salary and employee name
+      
    public Payroll(double Sal,String givenUser)
         {
             Salary=Sal;
             emp=givenUser;
                  
         }
-         /**The method for calculating salary including bonus.Bonus is 10% of salary 
-      */ 
-        
-        
-     /**The getter for the Salary
-     * @return the Salary
-     */
+
+    Payroll() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+   
+   
+       //The method for calculating salary including bonus.Bonus is 10% of salary    
+   public void calculateSalary()
+   {
+     if(Salary <= 3000 )
+     {
+        setSalary(Salary + getBonus())   ; 
+     }
+     else if (Salary > 3000)
+     {
+     System.out.print("You are not Eligible for Bonus.");
+     System.exit(1);
+     }
+   }
+            
+     //The getter for the Salary
+     // @return the Salary
+    
         public double getSalary() 
         {
         return Salary;
         }
-
+       
+        public void setSalary(double Salary)
+        {
+          calculateSalary();
+            this.Salary = Salary ;
+          }        
+        
     /*The getter for bonus
      * @return the bonus*/
      
         public double getBonus() 
         {
-            return bonus;
+            return Salary/10;
         }
 
     /**user is the read only field
@@ -52,5 +69,9 @@ public class Payroll
         return emp;
     }
     
+    public void setEmp(String emp)
+    {
+    this.emp = emp ;
+    }
     
 }

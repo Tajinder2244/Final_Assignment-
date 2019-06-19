@@ -1,9 +1,11 @@
+package payroll;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package payroll;
+
 
 import java.util.Scanner;
 
@@ -17,13 +19,27 @@ public static void main(String[] args)
 {
 /* here assumed that 50 employee accounts can be created
  for the given bank */
-Payroll ac[]=new Payroll[50];
-Scanner sc=new Scanner(System.in);
+//Payroll ac[]=new Payroll[50];
+
+Payroll user = new Payroll() ;
+
+Scanner input = new Scanner(System.in);
+
 System.out.println("Please enter the employee name:");
-//add code
+String name;
+name = input.nextLine();
+
+// send name of the user to payroll class
+user.setEmp(name) ;
+
+
 System.out.println("Please enter the salary: salary <=3000");
-       
-System.out.println("The final Salary including bonus is: ");         
+int salary = input.nextInt();
+
+// send the salary for calculation
+ user.setSalary(salary);
+
+System.out.println("The final Salary for" + user.getEmp() +" including bonus is: "+ user.getSalary() );         
 
 }
 
