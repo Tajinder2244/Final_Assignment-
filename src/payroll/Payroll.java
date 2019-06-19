@@ -13,14 +13,13 @@ public class Payroll
    private String emp;
  
      //constructor that takes the salary and employee name
-      
-   public Payroll(double Sal,String givenUser)
+     public Payroll(double Sal,String givenUser)
         {
             Salary=Sal;
             emp=givenUser;
                  
-        }
-
+        }  
+   
     Payroll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
