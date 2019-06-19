@@ -1,5 +1,3 @@
-package payroll;
-
 
 /** This code calculates the salary including bonus.
  * bonus is 10% of salary and applied to the employees whose salary is <=3000
@@ -11,18 +9,11 @@ public class Payroll
    private double Salary;
    private double bonus;
    private String emp;
+   private double insert;
  
      //constructor that takes the salary and employee name
-     public Payroll(double Sal,String givenUser)
-        {
-            Salary=Sal;
-            emp=givenUser;
-                 
-        }  
-   
-    Payroll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+      
+ 
    
    
        //The method for calculating salary including bonus.Bonus is 10% of salary    
@@ -30,12 +21,13 @@ public class Payroll
    {
      if(Salary <= 3000 )
      {
-        setSalary(Salary + getBonus())   ; 
+         insert = Salary + getBonus() ;
+        setSalary(insert)   ; 
      }
      else if (Salary > 3000)
      {
      System.out.print("You are not Eligible for Bonus.");
-     System.exit(1);
+     System.exit(0);
      }
    }
             
@@ -49,7 +41,7 @@ public class Payroll
        
         public void setSalary(double Salary)
         {
-          calculateSalary();
+          
             this.Salary = Salary ;
           }        
         
